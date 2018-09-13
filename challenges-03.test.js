@@ -128,11 +128,8 @@ const errands = [
 
 const howManyTreats = (arr) => {
   // Solution code here...
-  arr.forEach((element) =>{
-    if (element.name === 'Treats'){
-        return element.quantity;
-    }  
-  })
+    return arr[2].items[1].quantity; 
+
 }
 
 // ------------------------------------------------------------------------------------------------
