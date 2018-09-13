@@ -74,7 +74,16 @@ const salesData = (hours, data) => {
 
 const giveValentines = (list) => {
   // Solution code here...
+  const messages = [];
+  list.forEach((value) => {
+    for(let i in list){
+      if(list[i] !== value)
+        messages.push(`${value} gives a Valentine to ${list[i]}.`);
+    }
+  });
+  return messages;
 };
+
 
 // ------------------------------------------------------------------------------------------------
 // CHALLENGE 4
@@ -260,32 +269,32 @@ describe('Testing challenge 2', () => {
   });
 });
 
-// describe('Testing challenge 3', () => {
-//   test('It should return a list of valentine exchanges', () => {
-//     expect(giveValentines(['Jerry', 'George', 'Elaine', 'Kramer', 'Newman'])).toStrictEqual([
-//       'Jerry gives a Valentine to George.',
-//       'Jerry gives a Valentine to Elaine.',
-//       'Jerry gives a Valentine to Kramer.',
-//       'Jerry gives a Valentine to Newman.',
-//       'George gives a Valentine to Jerry.',
-//       'George gives a Valentine to Elaine.',
-//       'George gives a Valentine to Kramer.',
-//       'George gives a Valentine to Newman.',
-//       'Elaine gives a Valentine to Jerry.',
-//       'Elaine gives a Valentine to George.',
-//       'Elaine gives a Valentine to Kramer.',
-//       'Elaine gives a Valentine to Newman.',
-//       'Kramer gives a Valentine to Jerry.',
-//       'Kramer gives a Valentine to George.',
-//       'Kramer gives a Valentine to Elaine.',
-//       'Kramer gives a Valentine to Newman.',
-//       'Newman gives a Valentine to Jerry.',
-//       'Newman gives a Valentine to George.',
-//       'Newman gives a Valentine to Elaine.',
-//       'Newman gives a Valentine to Kramer.'
-//     ]);
-//   });
-// });
+describe('Testing challenge 3', () => {
+  test('It should return a list of valentine exchanges', () => {
+    expect(giveValentines(['Jerry', 'George', 'Elaine', 'Kramer', 'Newman'])).toStrictEqual([
+      'Jerry gives a Valentine to George.',
+      'Jerry gives a Valentine to Elaine.',
+      'Jerry gives a Valentine to Kramer.',
+      'Jerry gives a Valentine to Newman.',
+      'George gives a Valentine to Jerry.',
+      'George gives a Valentine to Elaine.',
+      'George gives a Valentine to Kramer.',
+      'George gives a Valentine to Newman.',
+      'Elaine gives a Valentine to Jerry.',
+      'Elaine gives a Valentine to George.',
+      'Elaine gives a Valentine to Kramer.',
+      'Elaine gives a Valentine to Newman.',
+      'Kramer gives a Valentine to Jerry.',
+      'Kramer gives a Valentine to George.',
+      'Kramer gives a Valentine to Elaine.',
+      'Kramer gives a Valentine to Newman.',
+      'Newman gives a Valentine to Jerry.',
+      'Newman gives a Valentine to George.',
+      'Newman gives a Valentine to Elaine.',
+      'Newman gives a Valentine to Kramer.'
+    ]);
+  });
+});
 
 // describe('Testing challenge 4', () => {
 //   test('It should return the number 14', () => {
